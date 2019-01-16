@@ -12,5 +12,12 @@
     "lib": ["dom", "dom.iterable", "esnext"],
     "jsx": "preserve"
   },
-  "include": ["src"]
+  "include": ["src/**/*"],
+  "exclude": [
+    "postcss.config.js",
+    "node_modules",
+    "babel-config.js",
+    "webpack.config.js",
+    "build-utils/*"
+  ]
 }

@@ -14,6 +14,33 @@ const config = {
   module: {
     rules: [
       {
+        test: /\.less$/,
+        include: [/[\\/]node_modules[\\/].*antd/],
+        use: [
+          {
+            loader: "style-loader",
+          },
+          {
+            loader: "css-loader",
+            options: {
+              importLoaders: 1,
+            },
+          },
+          {
+            loader: "postcss-loader",
+          },
+          {
+            loader: "less-loader",
+            options: {
+              modifyVars: {
+                "primary-color": "#000000",
+              },
+              javascriptEnabled: true,
+            },
+          },
+        ],
+      },
+      {
         test: /\.css$/,
         exclude: /node_modules/,
         use: [
