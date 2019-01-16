@@ -1,11 +1,11 @@
 const webpack = require("webpack");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
-const commonPaths = require("./common-paths");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
+
+const commonPaths = require("./common-paths");
 
 module.exports = {
   devtool: "source-map",
@@ -17,7 +17,7 @@ module.exports = {
         use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"],
       },
       {
-        test: /\.jsx?$/,
+        test: /\.(tsx?|jsx?)$/,
         use: {
           loader: "babel-loader",
         },

@@ -1,4 +1,13 @@
-const presets = ["@babel/env", "@babel/preset-react"];
+const presets = [
+  "@babel/env",
+  "@babel/preset-react",
+  [
+    "@babel/preset-typescript",
+    {
+      isTsx: true,
+    },
+  ],
+];
 
 const plugins = [
   "@babel/plugin-proposal-object-rest-spread",

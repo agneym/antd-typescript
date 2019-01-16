@@ -1,5 +1,4 @@
 const webpack = require("webpack");
-const commonPaths = require("./common-paths");
 
 const config = {
   devServer: {
@@ -11,7 +10,7 @@ const config = {
     useLocalIp: true,
     historyApiFallback: true,
   },
-  mode: development,
+  mode: "development",
   module: {
     rules: [
       {
@@ -30,7 +29,7 @@ const config = {
         ],
       },
       {
-        test: /\.jsx?$/,
+        test: /\.(tsx?|jsx?)$/,
         use: {
           loader: "babel-loader",
         },
