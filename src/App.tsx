@@ -5,7 +5,7 @@ import { Button } from 'antd';
 class App extends Component<{}, {}> {
   public render() {
     return (
-      <main>
+      <main className="container">
         <Button type="primary">Primary</Button>
       </main>
     )
