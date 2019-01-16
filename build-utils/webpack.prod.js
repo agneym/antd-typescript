@@ -13,6 +13,29 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.less$/,
+        include: [/[\\/]node_modules[\\/].*antd/],
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: "css-loader",
+            options: {
+              importLoaders: 2,
+            },
+          },
+          {
+            loader: "postcss-loader",
+          },
+          {
+            loader: "less-loader",
+            options: {
+              modifyVars: require(commonPaths.antdConfig),
+              javascriptEnabled: true,
+            },
+          },
+        ],
+      },
+      {
         test: /\.css$/,
         use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"],
       },
