@@ -1,5 +1,7 @@
 const webpack = require("webpack");
 
+const commonPaths = require("./common-paths");
+
 const config = {
   devServer: {
     port: 3000,
@@ -32,9 +34,7 @@ const config = {
           {
             loader: "less-loader",
             options: {
-              modifyVars: {
-                "primary-color": "#000000",
-              },
+              modifyVars: require(commonPaths.antdConfig),
               javascriptEnabled: true,
             },
           },

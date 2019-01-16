@@ -5,4 +5,5 @@ module.exports = {
   outputPath: path.resolve(__dirname, "../", "dist"),
   appSrc: path.resolve(__dirname, "../", "src"),
   public: path.resolve(__dirname, "../", "public"),
+  antdConfig: path.resolve(__dirname, "../", "antd-theme.js"),
 };
